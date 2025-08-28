@@ -1,0 +1,91 @@
+{
+  "field": {
+    "name": "Open Field",
+    "description": "You are standing in an open field west of a white house, with a boarded front door. There is a small mailbox here.",
+    "short_description": "an open field",
+    "exits": {
+      "north": "forest",
+      "east": "house",
+      "south": "garden"
+    }
+  },
+  "house": {
+    "name": "White House",
+    "description": "You are facing the south side of a white house. There is no door here, and all the windows are boarded up. To the north a narrow path winds alongside the house.",
+    "short_description": "the white house",
+    "exits": {
+      "west": "field",
+      "north": "path"
+    }
+  },
+  "forest": {
+    "name": "Forest",
+    "description": "You are in a forest, with trees in all directions. To the east, there appears to be sunlight filtering through the canopy.",
+    "short_description": "a dense forest",
+    "exits": {
+      "south": "field",
+      "east": "clearing"
+    }
+  },
+  "clearing": {
+    "name": "Forest Clearing",
+    "description": "You are in a small clearing in the dense forest. The trees form a natural circle around this peaceful spot. Sunlight streams down from above, illuminating ancient stone ruins.",
+    "short_description": "a forest clearing",
+    "exits": {
+      "west": "forest",
+      "down": "cave"
+    }
+  },
+  "garden": {
+    "name": "Garden",
+    "description": "You are in a small garden behind the white house. A well-worn path leads north to the house. The garden is overgrown but still beautiful, with wild flowers everywhere.",
+    "short_description": "a small garden",
+    "exits": {
+      "north": "field"
+    }
+  },
+  "path": {
+    "name": "Narrow Path",
+    "description": "You are on a narrow path on the north side of the house. The path leads west around the house and east to a wooden door. The door appears to be unlocked.",
+    "short_description": "a narrow path",
+    "exits": {
+      "south": "house",
+      "east": "kitchen",
+      "west": "field"
+    }
+  },
+  "kitchen": {
+    "name": "Kitchen",
+    "description": "You are in the kitchen of the white house. A table sits in the middle of the room, covered with dust. To the east is a dark hallway.",
+    "short_description": "a dusty kitchen",
+    "exits": {
+      "west": "path",
+      "east": "hallway"
+    }
+  },
+  "hallway": {
+    "name": "Dark Hallway",
+    "description": "You are in a dark hallway. It is too dark to see anything clearly. You can feel walls on both sides and sense that the hallway continues to the east.",
+    "short_description": "a dark hallway",
+    "exits": {
+      "west": "kitchen",
+      "east": "living_room"
+    }
+  },
+  "living_room": {
+    "name": "Living Room",
+    "description": "You are in a comfortable living room. There are chairs and a sofa here, covered with dust sheets. A large treasure chest sits prominently in the center of the room.",
+    "short_description": "a dusty living room",
+    "exits": {
+      "west": "hallway"
+    }
+  },
+  "cave": {
+    "name": "Underground Cave",
+    "description": "You are in a small underground cave beneath the forest clearing. The cave is dimly lit by phosphorescent moss on the walls. Strange symbols are carved into the rock.",
+    "short_description": "an underground cave",
+    "exits": {
+      "up": "clearing"
+    }
+  }
+}

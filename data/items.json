@@ -1,0 +1,106 @@
+{
+  "mailbox": {
+    "name": "mailbox",
+    "description": "It's a small mailbox, typical of those found in front of houses. It appears to be closed.",
+    "synonyms": ["mail box", "box"],
+    "takeable": false,
+    "readable": false,
+    "useable": false,
+    "openable": true,
+    "room": "field"
+  },
+  "leaflet": {
+    "name": "leaflet",
+    "description": "It's a small leaflet with text printed on it.",
+    "synonyms": ["flyer", "paper", "note"],
+    "takeable": true,
+    "readable": true,
+    "useable": false,
+    "openable": false,
+    "read_text": "\"Welcome to ZorkMUD: Sentinel Realm! Your mission is to explore this world and uncover its secrets. Find the treasure to win the game. Good luck, brave adventurer!\"",
+    "container": "mailbox"
+  },
+  "lamp": {
+    "name": "lamp",
+    "description": "It's a brass lantern with a switch on the side. It appears to be turned off.",
+    "synonyms": ["lantern", "light"],
+    "takeable": true,
+    "readable": false,
+    "useable": true,
+    "openable": false,
+    "room": "kitchen"
+  },
+  "key": {
+    "name": "brass key",
+    "description": "It's a small brass key, old but well-maintained. It looks like it might open something important.",
+    "synonyms": ["key"],
+    "takeable": true,
+    "readable": false,
+    "useable": true,
+    "openable": false,
+    "room": "garden"
+  },
+  "scroll": {
+    "name": "ancient scroll",
+    "description": "It's an ancient scroll made of parchment, covered with mysterious symbols and text.",
+    "synonyms": ["scroll", "parchment"],
+    "takeable": true,
+    "readable": true,
+    "useable": false,
+    "openable": false,
+    "read_text": "\"The treasure lies where light banishes darkness, and the key unlocks the final mystery. Beware: only the prepared shall claim the prize.\"",
+    "room": "cave"
+  },
+  "chest": {
+    "name": "treasure chest",
+    "description": "It's a large, ornate treasure chest made of dark wood with brass fittings. It appears to be locked and requires a key.",
+    "synonyms": ["chest", "treasure", "box"],
+    "takeable": false,
+    "readable": false,
+    "useable": false,
+    "openable": true,
+    "key_required": "brass key",
+    "room": "living_room"
+  },
+  "treasure": {
+    "name": "golden treasure",
+    "description": "It's a magnificent golden chalice encrusted with precious gems. This is clearly the treasure you've been seeking!",
+    "synonyms": ["gold", "chalice", "cup", "prize"],
+    "takeable": true,
+    "readable": false,
+    "useable": false,
+    "openable": false,
+    "container": "chest"
+  },
+  "table": {
+    "name": "table",
+    "description": "It's a wooden table covered with a thick layer of dust. Nothing appears to be on it.",
+    "synonyms": ["desk"],
+    "takeable": false,
+    "readable": false,
+    "useable": false,
+    "openable": false,
+    "room": "kitchen"
+  },
+  "flowers": {
+    "name": "wild flowers",
+    "description": "Beautiful wild flowers of various colors grow throughout the garden. They smell wonderful.",
+    "synonyms": ["flower", "wildflowers"],
+    "takeable": false,
+    "readable": false,
+    "useable": false,
+    "openable": false,
+    "room": "garden"
+  },
+  "symbols": {
+    "name": "carved symbols",
+    "description": "Ancient symbols are carved deep into the cave wall. They seem to tell a story of great treasure and adventure.",
+    "synonyms": ["symbol", "carving", "carvings", "writing"],
+    "takeable": false,
+    "readable": true,
+    "useable": false,
+    "openable": false,
+    "read_text": "The symbols depict a journey: a lamp lighting the way through darkness, a key opening a great treasure, and a hero emerging victorious.",
+    "room": "cave"
+  }
+}

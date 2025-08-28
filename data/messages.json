@@ -1,0 +1,92 @@
+{
+  "welcome": "Welcome to ZorkMUD: Sentinel Realm\nA classic text adventure in the spirit of Zork\n\nType 'help' for a list of commands.\n",
+  
+  "movement": {
+    "no_exit": "You can't go that way.",
+    "moved": "You go {direction}.",
+    "already_here": "You're already here."
+  },
+  
+  "inventory": {
+    "empty": "You are carrying nothing.",
+    "taken": "Taken.",
+    "already_have": "You already have that.",
+    "not_here": "I don't see that here.",
+    "cant_take": "You can't take that.",
+    "dropped": "Dropped.",
+    "not_carrying": "You're not carrying that."
+  },
+  
+  "interaction": {
+    "dont_understand": "I don't understand that.",
+    "nothing_special": "You see nothing special about it.",
+    "no_response": "Nothing happens.",
+    "cant_open": "You can't open that.",
+    "cant_read": "You can't read that.",
+    "cant_use": "You can't use that.",
+    "already_open": "It's already open.",
+    "locked": "It's locked.",
+    "need_key": "You need a key to open that."
+  },
+  
+  "game": {
+    "unknown_command": "I don't understand that command. Type 'help' for a list of commands.",
+    "save_success": "Game saved successfully.",
+    "save_error": "Error saving game.",
+    "load_success": "Game loaded successfully.",
+    "load_error": "Error loading game or no saved game found.",
+    "quit_confirm": "Thanks for playing ZorkMUD: Sentinel Realm! Come back soon!",
+    "win_message": "Congratulations! You have found the golden treasure and won the game!\nYour final score: {score} points in {moves} moves.\n\nThank you for playing ZorkMUD: Sentinel Realm!",
+    "death_message": "You have died. Game over.\n\nType 'quit' to exit or 'load' to restore a saved game."
+  },
+  
+  "dark_room": {
+    "description": "It is pitch black. You are likely to be eaten by a grue.",
+    "movement_blocked": "It's too dark to move safely. You need light.",
+    "action_blocked": "It's too dark to see anything. You need light."
+  },
+  
+  "lamp": {
+    "turn_on": "The lamp is now on, providing a warm glow.",
+    "turn_off": "The lamp is now off.",
+    "already_on": "The lamp is already on.",
+    "already_off": "The lamp is already off.",
+    "need_lamp": "You need a light source to see in the dark.",
+    "illuminated": "The lamp illuminates the area around you."
+  },
+  
+  "easter_eggs": {
+    "xyzzy": "Nothing happens. This isn't quite that kind of adventure.",
+    "plugh": "A hollow voice says 'Plugh'.",
+    "hello": "Hello there, adventurer!",
+    "zork": "This is ZorkMUD: Sentinel Realm, a spiritual successor to the classic adventures.",
+    "author": "This game was created as a proof of concept for integrating classic MUD gameplay with modern learning scenarios.",
+    "score_hints": [
+      "Taking the leaflet: 5 points",
+      "Opening the mailbox: 5 points", 
+      "Taking the lamp: 10 points",
+      "Finding the key: 15 points",
+      "Reading the scroll: 10 points",
+      "Opening the treasure chest: 20 points",
+      "Taking the treasure: 50 points"
+    ]
+  },
+  
+  "hints": {
+    "general": [
+      "Explore all the rooms to find useful items.",
+      "Some items can be opened to reveal contents.",
+      "Read any text you find - it may contain important clues.",
+      "The lamp might be useful in dark places.",
+      "Keys are used to open locked containers.",
+      "Your goal is to find the treasure!"
+    ],
+    
+    "specific": {
+      "dark_hallway": "Try using a light source here.",
+      "treasure_chest": "You'll need a key to open this.",
+      "mailbox": "Try opening it to see what's inside.",
+      "cave_symbols": "These carvings might tell you something important."
+    }
+  }
+}
