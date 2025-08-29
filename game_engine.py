@@ -10,6 +10,7 @@ from player import Player
 from room import Room
 from item import Item
 from parser import Parser
+from ansi_graphics import ANSIArt, ANSIColors, colorize_text, box_text
 
 class GameEngine:
     """Main game engine that manages the game state and processes commands."""
@@ -117,7 +118,16 @@ class GameEngine:
         self.game_won = False
         self.scored_actions = set()
         
-        print(self.messages['welcome'])
+        # Show the BBS-style title card
+        print(ANSIArt.title_card())
+        input()  # Wait for user to press enter
+        print(ANSIColors.CLEAR_SCREEN)
+        
+        # Show main game logo
+        print(ANSIArt.game_logo())
+        
+        print(colorize_text(self.messages['welcome'], ANSIColors.BRIGHT_GREEN))
+        print(ANSIArt.bbs_footer())
         self.look_around()
         return True
     
@@ -247,12 +257,50 @@ class GameEngine:
         """Show the current room description."""
         current_room = self.rooms[self.player.current_room]
         
-        # Handle dark room
+        # Handle dark room with special ANSI graphics
         if self.player.current_room == 'hallway' and not self.lamp_on:
-            print(self.messages['dark_room']['description'])
+            print(ANSIArt.dark_room_warning())
+            print(colorize_text(self.messages['dark_room']['description'], ANSIColors.BRIGHT_RED))
             return
         
-        print(current_room.look())
+        # Show room with ANSI border
+        print(ANSIArt.room_border(current_room.name, current_room.short_description))
+        
+        # Add special ASCII art for certain rooms
+        if self.player.current_room == 'house':
+            print(ANSIArt.ascii_house())
+        elif self.player.current_room == 'cave':
+            print(ANSIArt.ascii_cave())
+        elif self.player.current_room == 'living_room':
+            # Check if treasure chest is still there
+            chest = current_room.get_item('treasure chest')
+            if chest:
+                print(ANSIArt.ascii_treasure())
+        
+        # Show room description with color
+        description = current_room.description
+        if self.lamp_on and self.player.current_room == 'hallway':
+            description += f" {ANSIArt.lamp_glow()} Your lamp illuminates the darkness."
+        
+        print(colorize_text(description, ANSIColors.BRIGHT_WHITE))
+        
+        # Show items in room with color
+        if current_room.items:
+            print(colorize_text("\nYou can see:", ANSIColors.BRIGHT_CYAN))
+            for item in current_room.items:
+                if item.name == 'lamp' and self.lamp_on:
+                    print(f"  {ANSIArt.lamp_glow()} {colorize_text(item.name, ANSIColors.BRIGHT_YELLOW)} (glowing)")
+                else:
+                    print(f"  {colorize_text(item.name, ANSIColors.BRIGHT_GREEN)}")
+        
+        # Show exits with color
+        exits = current_room.exits
+        if exits:
+            exit_text = "Exits: " + ", ".join([colorize_text(direction, ANSIColors.BRIGHT_MAGENTA) for direction in exits.keys()])
+            print(f"\n{exit_text}")
+        
+        # Show status bar
+        print(ANSIArt.status_bar(self.player.health, self.player.score, self.player.moves, len(self.player.inventory)))
     
     def examine_object(self, object_name):
         """Examine an object in detail."""
@@ -292,7 +340,8 @@ class GameEngine:
     
     def show_inventory(self):
         """Show the player's inventory."""
-        print(self.player.show_inventory())
+        inventory_text = self.player.show_inventory()
+        print(box_text(inventory_text, ANSIColors.BRIGHT_CYAN))
     
     def take_object(self, object_name):
         """Take an object from the current room."""
@@ -302,7 +351,7 @@ class GameEngine:
         
         # Check if in dark room
         if self.player.current_room == 'hallway' and not self.lamp_on:
-            print(self.messages['dark_room']['action_blocked'])
+            print(colorize_text(self.messages['dark_room']['action_blocked'], ANSIColors.BRIGHT_RED))
             return
         
         object_name = self.parser.normalize_object_name(object_name)
@@ -313,7 +362,7 @@ class GameEngine:
         if item and item.takeable:
             current_room.remove_item(object_name)
             self.player.add_item(item)
-            print(self.messages['inventory']['taken'])
+            print(colorize_text(self.messages['inventory']['taken'], ANSIColors.BRIGHT_GREEN))
             
             # Award points for specific items
             self._check_scoring('take', item.name)
@@ -326,13 +375,13 @@ class GameEngine:
                     if content_item.matches_name(object_name) and content_item.takeable:
                         room_item.contents.remove(content_item)
                         self.player.add_item(content_item)
-                        print(self.messages['inventory']['taken'])
+                        print(colorize_text(self.messages['inventory']['taken'], ANSIColors.BRIGHT_GREEN))
                         
                         # Award points 
                         self._check_scoring('take', content_item.name)
                         return
         
-        print(self.messages['inventory']['not_here'])
+        print(colorize_text(self.messages['inventory']['not_here'], ANSIColors.BRIGHT_RED))
     
     def drop_object(self, object_name):
         """Drop an object in the current room."""
@@ -363,25 +412,25 @@ class GameEngine:
             print(self.messages['inventory']['not_carrying'])
             return
         
-        # Special case for lamp
+        # Special case for lamp with ANSI effects
         if item.matches_name('lamp') or item.matches_name('lantern'):
             if not self.lamp_on:
                 self.lamp_on = True
-                print(self.messages['lamp']['turn_on'])
+                print(f"{ANSIArt.lamp_glow()} {colorize_text(self.messages['lamp']['turn_on'], ANSIColors.BRIGHT_YELLOW)}")
                 # If in dark hallway, show the room description
                 if self.player.current_room == 'hallway':
                     self.look_around()
             else:
                 self.lamp_on = False
-                print(self.messages['lamp']['turn_off'])
+                print(colorize_text(self.messages['lamp']['turn_off'], ANSIColors.DIM))
             return
         
         # Generic use
         if item.useable:
             success, message = item.use()
-            print(message)
+            print(colorize_text(message, ANSIColors.BRIGHT_GREEN if success else ANSIColors.BRIGHT_RED))
         else:
-            print(self.messages['interaction']['cant_use'])
+            print(colorize_text(self.messages['interaction']['cant_use'], ANSIColors.BRIGHT_RED))
     
     def open_object(self, object_name):
         """Open an object."""
@@ -485,14 +534,17 @@ class GameEngine:
             if points > 0:
                 self.player.add_score(points)
                 self.scored_actions.add(action_key)
+                score_msg = f"[+{points} points] Total Score: {self.player.score}"
+                print(colorize_text(score_msg, ANSIColors.BRIGHT_YELLOW))
     
     def _win_game(self):
         """Handle winning the game."""
         self.game_won = True
-        print(self.messages['game']['win_message'].format(
+        print(ANSIArt.victory_banner())
+        print(colorize_text(self.messages['game']['win_message'].format(
             score=self.player.score,
             moves=self.player.moves
-        ))
+        ), ANSIColors.BRIGHT_YELLOW))
     
     def show_score(self):
         """Show the player's current score."""
@@ -513,9 +565,10 @@ class GameEngine:
         """Main game loop."""
         while self.running and not self.game_won:
             try:
-                user_input = input("\n> ").strip()
+                print(ANSIArt.command_prompt(), end="")
+                user_input = input().strip()
                 if user_input:
                     self.process_command(user_input)
             except (EOFError, KeyboardInterrupt):
-                print("\n" + self.messages['game']['quit_confirm'])
+                print(f"\n{colorize_text(self.messages['game']['quit_confirm'], ANSIColors.BRIGHT_YELLOW)}")
                 break
