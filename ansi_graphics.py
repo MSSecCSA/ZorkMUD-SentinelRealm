@@ -71,20 +71,20 @@ class ANSIArt:
     def game_logo():
         """Main game logo in classic BBS style."""
         logo = f"""{ANSIColors.BRIGHT_CYAN}
-╔══════════════════════════════════════════════════════════════════════════════╗
-║                                                                              ║
-║  {ANSIColors.BRIGHT_YELLOW}███████╗ ██████╗ ██████╗ ██╗  ██╗    ███╗   ███╗██╗   ██╗██████╗ {ANSIColors.BRIGHT_CYAN}  ║
-║  {ANSIColors.BRIGHT_YELLOW}╚══███╔╝██╔═══██╗██╔══██╗██║ ██╔╝    ████╗ ████║██║   ██║██╔══██╗{ANSIColors.BRIGHT_CYAN}  ║
-║    {ANSIColors.BRIGHT_YELLOW}███╔╝ ██║   ██║██████╔╝█████╔╝     ██╔████╔██║██║   ██║██║  ██║{ANSIColors.BRIGHT_CYAN}  ║
-║   {ANSIColors.BRIGHT_YELLOW}███╔╝  ██║   ██║██╔══██╗██╔═██╗     ██║╚██╔╝██║██║   ██║██║  ██║{ANSIColors.BRIGHT_CYAN}  ║
-║  {ANSIColors.BRIGHT_YELLOW}███████╗╚██████╔╝██║  ██║██║  ██╗    ██║ ╚═╝ ██║╚██████╔╝██████╔╝{ANSIColors.BRIGHT_CYAN}  ║
-║  {ANSIColors.BRIGHT_YELLOW}╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝    ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ {ANSIColors.BRIGHT_CYAN}  ║
-║                                                                              ║
-║            {ANSIColors.BRIGHT_MAGENTA}═══════════ SENTINEL REALM ═══════════{ANSIColors.BRIGHT_CYAN}                ║
-║                                                                              ║
-║  {ANSIColors.BRIGHT_GREEN}A Classic Text Adventure in the Spirit of the Great Underground Empire{ANSIColors.BRIGHT_CYAN} ║
-║                                                                              ║
-╚══════════════════════════════════════════════════════════════════════════════╝{ANSIColors.RESET}
+ ████████████████████████████████████████████████████████████████████████████████
+ █                                                                              █
+ █  {ANSIColors.BRIGHT_YELLOW}███████╗ ██████╗ ██████╗ ██╗  ██╗    ███╗   ███╗██╗   ██╗██████╗ {ANSIColors.BRIGHT_CYAN}  █
+ █  {ANSIColors.BRIGHT_YELLOW}╚══███╔╝██╔═══██╗██╔══██╗██║ ██╔╝    ████╗ ████║██║   ██║██╔══██╗{ANSIColors.BRIGHT_CYAN}  █
+ █    {ANSIColors.BRIGHT_YELLOW}███╔╝ ██║   ██║██████╔╝█████╔╝     ██╔████╔██║██║   ██║██║  ██║{ANSIColors.BRIGHT_CYAN}  █
+ █   {ANSIColors.BRIGHT_YELLOW}███╔╝  ██║   ██║██╔══██╗██╔═██╗     ██║╚██╔╝██║██║   ██║██║  ██║{ANSIColors.BRIGHT_CYAN}  █
+ █  {ANSIColors.BRIGHT_YELLOW}███████╗╚██████╔╝██║  ██║██║  ██╗    ██║ ╚═╝ ██║╚██████╔╝██████╔╝{ANSIColors.BRIGHT_CYAN}  █
+ █  {ANSIColors.BRIGHT_YELLOW}╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝    ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ {ANSIColors.BRIGHT_CYAN}  █
+ █                                                                              █
+ █            {ANSIColors.BRIGHT_MAGENTA}═══════════ SENTINEL REALM ═══════════{ANSIColors.BRIGHT_CYAN}                █
+ █                                                                              █
+ █  {ANSIColors.BRIGHT_GREEN}A Classic Text Adventure in the Spirit of the Great Underground Empire{ANSIColors.BRIGHT_CYAN} █
+ █                                                                              █
+ ████████████████████████████████████████████████████████████████████████████████{ANSIColors.RESET}
 """
         return logo
     
@@ -231,18 +231,18 @@ class ANSIArt:
     def dark_room_warning():
         """Scary dark room warning."""
         warning = f"""{ANSIColors.BRIGHT_RED}
-╔══════════════════════════════════════════════════════════════════════════════╗
-║                                                                              ║
-║     {ANSIColors.BRIGHT_RED}▄▄▄▄▄  ██▀▀▀██  ██▀▀██▀▀██  ███▀▀▀  ██    ██ ███▀▀▀▀ ███▀▀▀    {ANSIColors.BRIGHT_RED}║
-║    {ANSIColors.BRIGHT_RED}██   ██ ██   ██  ██  ██  ██  ██      ██    ██ ██      ██        {ANSIColors.BRIGHT_RED}║
-║    {ANSIColors.BRIGHT_RED}██   ██ ██▄▄▄██  ██  ██  ██  ██▄▄▄   ██▄▄▄▄██ ██▄▄▄   ██▄▄▄     {ANSIColors.BRIGHT_RED}║
-║    {ANSIColors.BRIGHT_RED}██   ██ ██▀▀▀██  ██  ██  ██  ██▀▀▀   ██▀▀▀▀██ ██▀▀▀   ██▀▀▀     {ANSIColors.BRIGHT_RED}║
-║     {ANSIColors.BRIGHT_RED}▀▀▀▀▀  ██   ██  ▀▀  ▀▀  ▀▀  ▀▀▀▀▀▀▀ ▀▀    ▀▀ ▀▀▀▀▀▀▀ ▀▀▀▀▀     {ANSIColors.BRIGHT_RED}║
-║                                                                              ║
-║               {ANSIColors.BRIGHT_WHITE}It is pitch black. You are likely to be               {ANSIColors.BRIGHT_RED}║
-║                         {ANSIColors.BRIGHT_WHITE}eaten by a grue.                           {ANSIColors.BRIGHT_RED}║
-║                                                                              ║
-╚══════════════════════════════════════════════════════════════════════════════╝{ANSIColors.RESET}
+ ████████████████████████████████████████████████████████████████████████████████
+ █                                                                              █
+ █     {ANSIColors.BRIGHT_RED}▄▄▄▄▄  ██▀▀▀██  ██▀▀██▀▀██  ███▀▀▀  ██    ██ ███▀▀▀▀ ███▀▀▀    {ANSIColors.BRIGHT_RED}█
+ █    {ANSIColors.BRIGHT_RED}██   ██ ██   ██  ██  ██  ██  ██      ██    ██ ██      ██        {ANSIColors.BRIGHT_RED}█
+ █    {ANSIColors.BRIGHT_RED}██   ██ ██▄▄▄██  ██  ██  ██  ██▄▄▄   ██▄▄▄▄██ ██▄▄▄   ██▄▄▄     {ANSIColors.BRIGHT_RED}█
+ █    {ANSIColors.BRIGHT_RED}██   ██ ██▀▀▀██  ██  ██  ██  ██▀▀▀   ██▀▀▀▀██ ██▀▀▀   ██▀▀▀     {ANSIColors.BRIGHT_RED}█
+ █     {ANSIColors.BRIGHT_RED}▀▀▀▀▀  ██   ██  ▀▀  ▀▀  ▀▀  ▀▀▀▀▀▀▀ ▀▀    ▀▀ ▀▀▀▀▀▀▀ ▀▀▀▀▀     {ANSIColors.BRIGHT_RED}█
+ █                                                                              █
+ █               {ANSIColors.BRIGHT_WHITE}It is pitch black. You are likely to be               {ANSIColors.BRIGHT_RED}█
+ █                         {ANSIColors.BRIGHT_WHITE}eaten by a grue.                           {ANSIColors.BRIGHT_RED}█
+ █                                                                              █
+ ████████████████████████████████████████████████████████████████████████████████{ANSIColors.RESET}
 """
         return warning
     
@@ -250,9 +250,9 @@ class ANSIArt:
     def bbs_footer():
         """Classic BBS-style footer."""
         footer = f"""{ANSIColors.BRIGHT_BLUE}
-┌──────────────────────────────────────────────────────────────────────────────┐
-│ {ANSIColors.BRIGHT_WHITE}░▒▓█ SENTINEL REALM BBS █▓▒░  │  Type 'help' for commands  │  'quit' to exit{ANSIColors.BRIGHT_BLUE} │
-└──────────────────────────────────────────────────────────────────────────────┘{ANSIColors.RESET}
+ ████████████████████████████████████████████████████████████████████████████████
+ █ {ANSIColors.BRIGHT_WHITE}░▒▓█ SENTINEL REALM BBS █▓▒░  │  Type 'help' for commands  │  'quit' to exit{ANSIColors.BRIGHT_BLUE} █
+ ████████████████████████████████████████████████████████████████████████████████{ANSIColors.RESET}
 """
         return footer
 
