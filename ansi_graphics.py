@@ -111,9 +111,9 @@ class ANSIArt:
     @staticmethod
     def status_bar(health, score, moves, inventory_count):
         """Create a status bar."""
-        status = f"""{ANSIColors.BG_BLUE}{ANSIColors.BRIGHT_WHITE}
+        status = f"""{ANSIColors.BRIGHT_BLUE}
 ┌─ STATUS ──────────────────────────────────────────────────────────────────────┐
-│ {ANSIColors.BRIGHT_GREEN}Health: {health:3d}/100{ANSIColors.BRIGHT_WHITE} │ {ANSIColors.BRIGHT_YELLOW}Score: {score:4d}{ANSIColors.BRIGHT_WHITE} │ {ANSIColors.BRIGHT_CYAN}Moves: {moves:4d}{ANSIColors.BRIGHT_WHITE} │ {ANSIColors.BRIGHT_MAGENTA}Items: {inventory_count:2d}{ANSIColors.BRIGHT_WHITE} │
+│ {ANSIColors.BRIGHT_GREEN}Health: {health:3d}/100{ANSIColors.BRIGHT_BLUE} │ {ANSIColors.BRIGHT_YELLOW}Score: {score:4d}{ANSIColors.BRIGHT_BLUE} │ {ANSIColors.BRIGHT_CYAN}Moves: {moves:4d}{ANSIColors.BRIGHT_BLUE} │ {ANSIColors.BRIGHT_MAGENTA}Items: {inventory_count:2d}{ANSIColors.BRIGHT_BLUE} │
 └───────────────────────────────────────────────────────────────────────────────┘{ANSIColors.RESET}
 """
         return status
@@ -126,23 +126,23 @@ class ANSIArt:
     @staticmethod
     def title_card():
         """Classic BBS-style title card."""
-        card = f"""{ANSIColors.CLEAR_SCREEN}{ANSIColors.BRIGHT_CYAN}
-        ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-        █                                                                    █
-        █  {ANSIColors.BRIGHT_YELLOW}██████╗ ██████╗ ███████╗    ████████╗██╗███╗   ███╗███████╗{ANSIColors.BRIGHT_CYAN}  █
-        █  {ANSIColors.BRIGHT_YELLOW}██╔══██╗██╔══██╗██╔════╝    ╚══██╔══╝██║████╗ ████║██╔════╝{ANSIColors.BRIGHT_CYAN}  █
-        █  {ANSIColors.BRIGHT_YELLOW}██████╔╝██████╔╝███████╗       ██║   ██║██╔████╔██║█████╗  {ANSIColors.BRIGHT_CYAN}  █
-        █  {ANSIColors.BRIGHT_YELLOW}██╔══██╗██╔══██╗╚════██║       ██║   ██║██║╚██╔╝██║██╔══╝  {ANSIColors.BRIGHT_CYAN}  █
-        █  {ANSIColors.BRIGHT_YELLOW}██████╔╝██████╔╝███████║       ██║   ██║██║ ╚═╝ ██║███████╗{ANSIColors.BRIGHT_CYAN}  █
-        █  {ANSIColors.BRIGHT_YELLOW}╚═════╝ ╚═════╝ ╚══════╝       ╚═╝   ╚═╝╚═╝     ╚═╝╚══════╝{ANSIColors.BRIGHT_CYAN}  █
-        █                                                                    █
-        █               {ANSIColors.BRIGHT_RED}║{ANSIColors.BRIGHT_MAGENTA} BULLETIN BOARD SYSTEM {ANSIColors.BRIGHT_RED}║{ANSIColors.BRIGHT_CYAN}                      █
-        █               {ANSIColors.BRIGHT_RED}║{ANSIColors.BRIGHT_WHITE} Est. 1980 - Running Strong {ANSIColors.BRIGHT_RED}║{ANSIColors.BRIGHT_CYAN}                     █
-        █                                                                    █
-        █  {ANSIColors.BRIGHT_GREEN}Welcome to the Underground Empire, Adventurer!{ANSIColors.BRIGHT_CYAN}                  █
-        █  {ANSIColors.WHITE}Your quest awaits in the mysterious Sentinel Realm...{ANSIColors.BRIGHT_CYAN}            █
-        █                                                                    █
-        ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+        card = f"""{ANSIColors.CLEAR_SCREEN}
+{ANSIColors.BRIGHT_CYAN}╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║  {ANSIColors.BRIGHT_YELLOW}██████╗ ██████╗ ███████╗    ████████╗██╗███╗   ███╗███████╗{ANSIColors.BRIGHT_CYAN}                  ║
+║  {ANSIColors.BRIGHT_YELLOW}██╔══██╗██╔══██╗██╔════╝    ╚══██╔══╝██║████╗ ████║██╔════╝{ANSIColors.BRIGHT_CYAN}                  ║
+║  {ANSIColors.BRIGHT_YELLOW}██████╔╝██████╔╝███████╗       ██║   ██║██╔████╔██║█████╗  {ANSIColors.BRIGHT_CYAN}                  ║
+║  {ANSIColors.BRIGHT_YELLOW}██╔══██╗██╔══██╗╚════██║       ██║   ██║██║╚██╔╝██║██╔══╝  {ANSIColors.BRIGHT_CYAN}                  ║
+║  {ANSIColors.BRIGHT_YELLOW}██████╔╝██████╔╝███████║       ██║   ██║██║ ╚═╝ ██║███████╗{ANSIColors.BRIGHT_CYAN}                  ║
+║  {ANSIColors.BRIGHT_YELLOW}╚═════╝ ╚═════╝ ╚══════╝       ╚═╝   ╚═╝╚═╝     ╚═╝╚══════╝{ANSIColors.BRIGHT_CYAN}                  ║
+║                                                                              ║
+║                    {ANSIColors.BRIGHT_RED}║{ANSIColors.BRIGHT_MAGENTA} BULLETIN BOARD SYSTEM {ANSIColors.BRIGHT_RED}║{ANSIColors.BRIGHT_CYAN}                         ║
+║                    {ANSIColors.BRIGHT_RED}║{ANSIColors.BRIGHT_WHITE} Est. 1980 - Running Strong {ANSIColors.BRIGHT_RED}║{ANSIColors.BRIGHT_CYAN}                        ║
+║                                                                              ║
+║            {ANSIColors.BRIGHT_GREEN}Welcome to the Underground Empire, Adventurer!{ANSIColors.BRIGHT_CYAN}                  ║
+║            {ANSIColors.WHITE}Your quest awaits in the mysterious Sentinel Realm...{ANSIColors.BRIGHT_CYAN}            ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
 
         {ANSIColors.BRIGHT_YELLOW}[{ANSIColors.BRIGHT_WHITE}PRESS ENTER TO CONTINUE{ANSIColors.BRIGHT_YELLOW}]{ANSIColors.RESET}
 """
@@ -163,7 +163,7 @@ class ANSIArt:
                    {ANSIColors.YELLOW}| |X|      |X| |{ANSIColors.BRIGHT_WHITE}
                    {ANSIColors.YELLOW}|_|_|______|_|_|{ANSIColors.BRIGHT_WHITE}
                    {ANSIColors.YELLOW}[________________]{ANSIColors.BRIGHT_WHITE}
-                                   
+
         {ANSIColors.BRIGHT_BLUE}The mysterious white house stands before you...{ANSIColors.RESET}
 """
         return house
@@ -178,7 +178,7 @@ class ANSIArt:
         {ANSIColors.BRIGHT_MAGENTA}≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋{ANSIColors.BRIGHT_BLACK}
         {ANSIColors.BRIGHT_MAGENTA}≋{ANSIColors.GREEN} ◊ {ANSIColors.BRIGHT_MAGENTA}≋{ANSIColors.GREEN} ♦ {ANSIColors.BRIGHT_MAGENTA}≋{ANSIColors.GREEN} ◊ {ANSIColors.BRIGHT_MAGENTA}≋{ANSIColors.GREEN} ♦ {ANSIColors.BRIGHT_MAGENTA}≋{ANSIColors.GREEN} ◊ {ANSIColors.BRIGHT_MAGENTA}≋{ANSIColors.GREEN} ♦ {ANSIColors.BRIGHT_MAGENTA}≋{ANSIColors.GREEN} ◊ {ANSIColors.BRIGHT_MAGENTA}≋{ANSIColors.BRIGHT_BLACK}
         {ANSIColors.BRIGHT_MAGENTA}≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋{ANSIColors.BRIGHT_BLACK}
-                               
+
         {ANSIColors.BRIGHT_CYAN}Ancient symbols glow on the cave walls...{ANSIColors.RESET}
 """
         return cave
@@ -196,7 +196,7 @@ class ANSIArt:
                  | {ANSIColors.BRIGHT_YELLOW}\\______/{ANSIColors.YELLOW}  |
                   \\__________/
                   [__________]
-                               
+
         {ANSIColors.BRIGHT_YELLOW}The magnificent treasure chest gleams!{ANSIColors.RESET}
 """
         return treasure
@@ -230,29 +230,29 @@ class ANSIArt:
     @staticmethod
     def dark_room_warning():
         """Scary dark room warning."""
-        warning = f"""{ANSIColors.BRIGHT_BLACK}{ANSIColors.BG_BLACK}
-        ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-        ░{ANSIColors.BRIGHT_RED}                                                                    {ANSIColors.BRIGHT_BLACK}░
-        ░{ANSIColors.BRIGHT_RED}     ▄▄▄▄▄  ██▀▀▀██  ██▀▀██▀▀██  ███▀▀▀  ██    ██ ███▀▀▀▀ ███▀▀▀    {ANSIColors.BRIGHT_BLACK}░
-        ░{ANSIColors.BRIGHT_RED}    ██   ██ ██   ██  ██  ██  ██  ██      ██    ██ ██      ██        {ANSIColors.BRIGHT_BLACK}░
-        ░{ANSIColors.BRIGHT_RED}    ██   ██ ██▄▄▄██  ██  ██  ██  ██▄▄▄   ██▄▄▄▄██ ██▄▄▄   ██▄▄▄     {ANSIColors.BRIGHT_BLACK}░
-        ░{ANSIColors.BRIGHT_RED}    ██   ██ ██▀▀▀██  ██  ██  ██  ██▀▀▀   ██▀▀▀▀██ ██▀▀▀   ██▀▀▀     {ANSIColors.BRIGHT_BLACK}░
-        ░{ANSIColors.BRIGHT_RED}     ▀▀▀▀▀  ██   ██  ▀▀  ▀▀  ▀▀  ▀▀▀▀▀▀▀ ▀▀    ▀▀ ▀▀▀▀▀▀▀ ▀▀▀▀▀     {ANSIColors.BRIGHT_BLACK}░
-        ░{ANSIColors.BRIGHT_RED}                                                                    {ANSIColors.BRIGHT_BLACK}░
-        ░{ANSIColors.BRIGHT_WHITE}               It is pitch black. You are likely to be               {ANSIColors.BRIGHT_BLACK}░
-        ░{ANSIColors.BRIGHT_WHITE}                         eaten by a grue.                           {ANSIColors.BRIGHT_BLACK}░
-        ░{ANSIColors.BRIGHT_RED}                                                                    {ANSIColors.BRIGHT_BLACK}░
-        ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░{ANSIColors.RESET}
+        warning = f"""{ANSIColors.BRIGHT_RED}
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║     {ANSIColors.BRIGHT_RED}▄▄▄▄▄  ██▀▀▀██  ██▀▀██▀▀██  ███▀▀▀  ██    ██ ███▀▀▀▀ ███▀▀▀    {ANSIColors.BRIGHT_RED}║
+║    {ANSIColors.BRIGHT_RED}██   ██ ██   ██  ██  ██  ██  ██      ██    ██ ██      ██        {ANSIColors.BRIGHT_RED}║
+║    {ANSIColors.BRIGHT_RED}██   ██ ██▄▄▄██  ██  ██  ██  ██▄▄▄   ██▄▄▄▄██ ██▄▄▄   ██▄▄▄     {ANSIColors.BRIGHT_RED}║
+║    {ANSIColors.BRIGHT_RED}██   ██ ██▀▀▀██  ██  ██  ██  ██▀▀▀   ██▀▀▀▀██ ██▀▀▀   ██▀▀▀     {ANSIColors.BRIGHT_RED}║
+║     {ANSIColors.BRIGHT_RED}▀▀▀▀▀  ██   ██  ▀▀  ▀▀  ▀▀  ▀▀▀▀▀▀▀ ▀▀    ▀▀ ▀▀▀▀▀▀▀ ▀▀▀▀▀     {ANSIColors.BRIGHT_RED}║
+║                                                                              ║
+║               {ANSIColors.BRIGHT_WHITE}It is pitch black. You are likely to be               {ANSIColors.BRIGHT_RED}║
+║                         {ANSIColors.BRIGHT_WHITE}eaten by a grue.                           {ANSIColors.BRIGHT_RED}║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝{ANSIColors.RESET}
 """
         return warning
     
     @staticmethod
     def bbs_footer():
         """Classic BBS-style footer."""
-        footer = f"""{ANSIColors.BRIGHT_BLACK}
-{ANSIColors.BG_BLUE}{ANSIColors.BRIGHT_WHITE}                                                                                {ANSIColors.RESET}
-{ANSIColors.BG_BLUE}{ANSIColors.BRIGHT_WHITE} ░▒▓█ SENTINEL REALM BBS █▓▒░  │  Type 'help' for commands  │  'quit' to exit {ANSIColors.RESET}
-{ANSIColors.BG_BLUE}{ANSIColors.BRIGHT_WHITE}                                                                                {ANSIColors.RESET}
+        footer = f"""{ANSIColors.BRIGHT_BLUE}
+╔══════════════════════════════════════════════════════════════════════════════╗
+║ {ANSIColors.BRIGHT_WHITE}░▒▓█ SENTINEL REALM BBS █▓▒░  │  Type 'help' for commands  │  'quit' to exit{ANSIColors.BRIGHT_BLUE} ║
+╚══════════════════════════════════════════════════════════════════════════════╝{ANSIColors.RESET}
 """
         return footer
 
