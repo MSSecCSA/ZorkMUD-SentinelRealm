@@ -20,18 +20,18 @@ def main():
     # Show retro BBS-style startup
     print(ANSIColors.CLEAR_SCREEN)
     startup_banner = f"""{ANSIColors.BRIGHT_CYAN}
-╔══════════════════════════════════════════════════════════════════════════════╗
-║                                                                              ║
-║  {ANSIColors.BRIGHT_YELLOW}███████╗ ██████╗ ██████╗ ██╗  ██╗    ███╗   ███╗██╗   ██╗██████╗ {ANSIColors.BRIGHT_CYAN}  ║
-║  {ANSIColors.BRIGHT_YELLOW}╚══███╔╝██╔═══██╗██╔══██╗██║ ██╔╝    ████╗ ████║██║   ██║██╔══██╗{ANSIColors.BRIGHT_CYAN}  ║
-║    {ANSIColors.BRIGHT_YELLOW}███╔╝ ██║   ██║██████╔╝█████╔╝     ██╔████╔██║██║   ██║██║  ██║{ANSIColors.BRIGHT_CYAN}  ║
-║   {ANSIColors.BRIGHT_YELLOW}███╔╝  ██║   ██║██╔══██╗██╔═██╗     ██║╚██╔╝██║██║   ██║██║  ██║{ANSIColors.BRIGHT_CYAN}  ║
-║  {ANSIColors.BRIGHT_YELLOW}███████╗╚██████╔╝██║  ██║██║  ██╗    ██║ ╚═╝ ██║╚██████╔╝██████╔╝{ANSIColors.BRIGHT_CYAN}  ║
-║  {ANSIColors.BRIGHT_YELLOW}╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝    ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ {ANSIColors.BRIGHT_CYAN}  ║
-║                                                                              ║
-║               {ANSIColors.BRIGHT_MAGENTA}SENTINEL REALM - BULLETIN BOARD SYSTEM{ANSIColors.BRIGHT_CYAN}                  ║
-║                                                                              ║
-╚══════════════════════════════════════════════════════════════════════════════╝{ANSIColors.RESET}
+ ████████████████████████████████████████████████████████████████████████████████
+ █                                                                              █
+ █  {ANSIColors.BRIGHT_YELLOW}███████╗ ██████╗ ██████╗ ██╗  ██╗    ███╗   ███╗██╗   ██╗██████╗ {ANSIColors.BRIGHT_CYAN}  █
+ █  {ANSIColors.BRIGHT_YELLOW}╚══███╔╝██╔═══██╗██╔══██╗██║ ██╔╝    ████╗ ████║██║   ██║██╔══██╗{ANSIColors.BRIGHT_CYAN}  █
+ █    {ANSIColors.BRIGHT_YELLOW}███╔╝ ██║   ██║██████╔╝█████╔╝     ██╔████╔██║██║   ██║██║  ██║{ANSIColors.BRIGHT_CYAN}  █
+ █   {ANSIColors.BRIGHT_YELLOW}███╔╝  ██║   ██║██╔══██╗██╔═██╗     ██║╚██╔╝██║██║   ██║██║  ██║{ANSIColors.BRIGHT_CYAN}  █
+ █  {ANSIColors.BRIGHT_YELLOW}███████╗╚██████╔╝██║  ██║██║  ██╗    ██║ ╚═╝ ██║╚██████╔╝██████╔╝{ANSIColors.BRIGHT_CYAN}  █
+ █  {ANSIColors.BRIGHT_YELLOW}╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝    ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ {ANSIColors.BRIGHT_CYAN}  █
+ █                                                                              █
+ █               {ANSIColors.BRIGHT_MAGENTA}SENTINEL REALM - BULLETIN BOARD SYSTEM{ANSIColors.BRIGHT_CYAN}                  █
+ █                                                                              █
+ ████████████████████████████████████████████████████████████████████████████████{ANSIColors.RESET}
 """
     print(startup_banner)
     

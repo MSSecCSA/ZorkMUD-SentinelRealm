@@ -91,20 +91,19 @@ class ANSIArt:
     @staticmethod
     def room_border(room_name, short_desc=""):
         """Create a bordered room header."""
-        name_len = len(room_name)
-        desc_len = len(short_desc)
-        total_width = max(60, name_len + 10, desc_len + 10)
+        # Use fixed width for consistency
+        width = 78
         
         border = f"""{ANSIColors.BRIGHT_BLUE}
-╔{'═' * (total_width - 2)}╗
-║ {ANSIColors.BRIGHT_WHITE}{ANSIColors.BOLD}{room_name.center(total_width - 4)}{ANSIColors.RESET}{ANSIColors.BRIGHT_BLUE} ║"""
+┌{'─' * (width - 2)}┐
+│ {ANSIColors.BRIGHT_WHITE}{ANSIColors.BOLD}{room_name.center(width - 4)}{ANSIColors.RESET}{ANSIColors.BRIGHT_BLUE} │"""
         
         if short_desc:
             border += f"""
-║ {ANSIColors.CYAN}{short_desc.center(total_width - 4)}{ANSIColors.BRIGHT_BLUE} ║"""
+│ {ANSIColors.CYAN}{short_desc.center(width - 4)}{ANSIColors.BRIGHT_BLUE} │"""
         
         border += f"""
-╚{'═' * (total_width - 2)}╝{ANSIColors.RESET}
+└{'─' * (width - 2)}┘{ANSIColors.RESET}
 """
         return border
     
@@ -127,22 +126,23 @@ class ANSIArt:
     def title_card():
         """Classic BBS-style title card."""
         card = f"""{ANSIColors.CLEAR_SCREEN}
-{ANSIColors.BRIGHT_CYAN}╔══════════════════════════════════════════════════════════════════════════════╗
-║                                                                              ║
-║  {ANSIColors.BRIGHT_YELLOW}██████╗ ██████╗ ███████╗    ████████╗██╗███╗   ███╗███████╗{ANSIColors.BRIGHT_CYAN}                  ║
-║  {ANSIColors.BRIGHT_YELLOW}██╔══██╗██╔══██╗██╔════╝    ╚══██╔══╝██║████╗ ████║██╔════╝{ANSIColors.BRIGHT_CYAN}                  ║
-║  {ANSIColors.BRIGHT_YELLOW}██████╔╝██████╔╝███████╗       ██║   ██║██╔████╔██║█████╗  {ANSIColors.BRIGHT_CYAN}                  ║
-║  {ANSIColors.BRIGHT_YELLOW}██╔══██╗██╔══██╗╚════██║       ██║   ██║██║╚██╔╝██║██╔══╝  {ANSIColors.BRIGHT_CYAN}                  ║
-║  {ANSIColors.BRIGHT_YELLOW}██████╔╝██████╔╝███████║       ██║   ██║██║ ╚═╝ ██║███████╗{ANSIColors.BRIGHT_CYAN}                  ║
-║  {ANSIColors.BRIGHT_YELLOW}╚═════╝ ╚═════╝ ╚══════╝       ╚═╝   ╚═╝╚═╝     ╚═╝╚══════╝{ANSIColors.BRIGHT_CYAN}                  ║
-║                                                                              ║
-║                    {ANSIColors.BRIGHT_RED}║{ANSIColors.BRIGHT_MAGENTA} BULLETIN BOARD SYSTEM {ANSIColors.BRIGHT_RED}║{ANSIColors.BRIGHT_CYAN}                         ║
-║                    {ANSIColors.BRIGHT_RED}║{ANSIColors.BRIGHT_WHITE} Est. 1980 - Running Strong {ANSIColors.BRIGHT_RED}║{ANSIColors.BRIGHT_CYAN}                        ║
-║                                                                              ║
-║            {ANSIColors.BRIGHT_GREEN}Welcome to the Underground Empire, Adventurer!{ANSIColors.BRIGHT_CYAN}                  ║
-║            {ANSIColors.WHITE}Your quest awaits in the mysterious Sentinel Realm...{ANSIColors.BRIGHT_CYAN}            ║
-║                                                                              ║
-╚══════════════════════════════════════════════════════════════════════════════╝
+{ANSIColors.BRIGHT_CYAN}
+ ████████████████████████████████████████████████████████████████████████████████
+ █                                                                              █
+ █  {ANSIColors.BRIGHT_YELLOW}██████╗ ██████╗ ███████╗    ████████╗██╗███╗   ███╗███████╗{ANSIColors.BRIGHT_CYAN}          █
+ █  {ANSIColors.BRIGHT_YELLOW}██╔══██╗██╔══██╗██╔════╝    ╚══██╔══╝██║████╗ ████║██╔════╝{ANSIColors.BRIGHT_CYAN}          █
+ █  {ANSIColors.BRIGHT_YELLOW}██████╔╝██████╔╝███████╗       ██║   ██║██╔████╔██║█████╗  {ANSIColors.BRIGHT_CYAN}          █
+ █  {ANSIColors.BRIGHT_YELLOW}██╔══██╗██╔══██╗╚════██║       ██║   ██║██║╚██╔╝██║██╔══╝  {ANSIColors.BRIGHT_CYAN}          █
+ █  {ANSIColors.BRIGHT_YELLOW}██████╔╝██████╔╝███████║       ██║   ██║██║ ╚═╝ ██║███████╗{ANSIColors.BRIGHT_CYAN}          █
+ █  {ANSIColors.BRIGHT_YELLOW}╚═════╝ ╚═════╝ ╚══════╝       ╚═╝   ╚═╝╚═╝     ╚═╝╚══════╝{ANSIColors.BRIGHT_CYAN}          █
+ █                                                                              █
+ █              {ANSIColors.BRIGHT_RED}║{ANSIColors.BRIGHT_MAGENTA} BULLETIN BOARD SYSTEM {ANSIColors.BRIGHT_RED}║{ANSIColors.BRIGHT_CYAN}                       █
+ █              {ANSIColors.BRIGHT_RED}║{ANSIColors.BRIGHT_WHITE} Est. 1980 - Running Strong {ANSIColors.BRIGHT_RED}║{ANSIColors.BRIGHT_CYAN}                      █
+ █                                                                              █
+ █        {ANSIColors.BRIGHT_GREEN}Welcome to the Underground Empire, Adventurer!{ANSIColors.BRIGHT_CYAN}                  █
+ █        {ANSIColors.WHITE}Your quest awaits in the mysterious Sentinel Realm...{ANSIColors.BRIGHT_CYAN}            █
+ █                                                                              █
+ ████████████████████████████████████████████████████████████████████████████████
 
         {ANSIColors.BRIGHT_YELLOW}[{ANSIColors.BRIGHT_WHITE}PRESS ENTER TO CONTINUE{ANSIColors.BRIGHT_YELLOW}]{ANSIColors.RESET}
 """
@@ -250,9 +250,9 @@ class ANSIArt:
     def bbs_footer():
         """Classic BBS-style footer."""
         footer = f"""{ANSIColors.BRIGHT_BLUE}
-╔══════════════════════════════════════════════════════════════════════════════╗
-║ {ANSIColors.BRIGHT_WHITE}░▒▓█ SENTINEL REALM BBS █▓▒░  │  Type 'help' for commands  │  'quit' to exit{ANSIColors.BRIGHT_BLUE} ║
-╚══════════════════════════════════════════════════════════════════════════════╝{ANSIColors.RESET}
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ {ANSIColors.BRIGHT_WHITE}░▒▓█ SENTINEL REALM BBS █▓▒░  │  Type 'help' for commands  │  'quit' to exit{ANSIColors.BRIGHT_BLUE} │
+└──────────────────────────────────────────────────────────────────────────────┘{ANSIColors.RESET}
 """
         return footer
 
